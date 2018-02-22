@@ -22,8 +22,6 @@ def get_applications(host, port, user, password, account):
 
     print('Getting apps', url)
     r = requests.get(url, auth=auth, params=params)
-    print(r.text)
-    print(r.headers)
     return sorted(r.json(), key=lambda k: k['name'])
 
 
